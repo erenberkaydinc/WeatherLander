@@ -10,8 +10,8 @@ import CoreLocation
 class NetworkManager {
     static var shared = NetworkManager()
     private let baseURL = "https://api.openweathermap.org/data/2.5/"
-    private let apiKey = "e059ad014bac773db26b5c128634c23b"
-    
+    private let apiKey = "typeYourApiKey"
+
     func fetchCurrentWeather(latitude: CLLocationDegrees, longitude: CLLocationDegrees, tempType: TempType = .celsius) async throws -> WeatherModel {
         guard let url = URL(string: "\(baseURL)/weather?lat=\(latitude)&lon=\(longitude)&appid=\(apiKey)&units=\(tempType.rawValue)") else {
             // Handle the case where the URL is invalid
